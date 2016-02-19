@@ -1,2 +1,4 @@
-require('./board-test');
-require('./block-test');
+require('./block_spec');
+require('./snake_spec');
+require('./food_spec');
+

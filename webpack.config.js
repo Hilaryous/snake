@@ -1,4 +1,6 @@
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
   entry: {
@@ -11,12 +13,24 @@ module.exports = {
   },
   module: {
     loaders: [
-      { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
-      { test: /\.css$/, loader: "style!css" },
-      { test: /\.scss$/, loader: "style!css!sass" }
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        query: {
+            cacheDirectory: true,
+            presets: ['es2015', 'stage-0']
+        }
+      },
+      {
+        test: /\.scss$/,
+        loader: ExtractTextPlugin.extract('css!sass')
+      }
     ]
   },
-  resolve: {
-    extensions: ['', '.js', '.json', '.scss', 'css']
-  }
+  plugins: [
+    new ExtractTextPlugin('public/style.css', {
+      allChunks: true
+    })
+  ]
 };

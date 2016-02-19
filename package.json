@@ -1,39 +1,44 @@
 {
-  "name": "tetris",
+  "name": "snake",
   "version": "1.0.0",
-  "description": "Tetris, the game.",
-  "main": "index.js",
+  "description": "",
+  "main": "bundle.js",
+  "directories": {
+    "test": "test"
+  },
   "scripts": {
     "start": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "build": "./node_modules/webpack/bin/webpack.js",
-    "test": "./node_modules/mocha/bin/mocha --compilers js:babel/register"
+    "test": "mocha --compilers js:babel-core/register --recursive"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/acareaga/tetris/issues.git"
+    "url": "git+https://github.com/Hilaryous/snake.git"
   },
-  "author": "Jhun de Andres & Aaron Careaga",
-  "license": "MIT",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/acareaga/tetris/issues"
+    "url": "https://github.com/Hilaryous/snake/issues"
   },
-  "homepage": "https://github.com/acareaga/tetris",
+  "homepage": "https://github.com/Hilaryous/snake#readme",
   "devDependencies": {
-    "babel": "^5.8.3",
-    "babel-core": "^5.7.4",
-    "babel-loader": "^5.3.2",
-    "chai": "^3.2.0",
-    "css-loader": "^0.15.5",
-    "mocha": "^2.2.5",
+    "airbnb-style": "^2.0.0",
+    "babel-cli": "^6.5.1",
+    "babel-core": "^6.5.2",
+    "babel-loader": "^6.2.2",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "chai": "^3.5.0",
+    "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "mocha": "^2.4.5",
     "mocha-loader": "^0.7.1",
-    "node-libs-browser": "^0.5.2",
-    "node-sass": "^3.2.0",
-    "sass-loader": "^1.0.2",
-    "style-loader": "^0.12.3",
-    "webpack": "^1.10.1",
-    "webpack-dev-server": "^1.10.1"
-  },
-  "dependencies": {
-    "wolfy87-eventemitter": "4.3.0"
+    "node-libs-browser": "^1.0.0",
+    "node-sass": "^3.4.2",
+    "sass-loader": "^3.1.2",
+    "style-loader": "^0.13.0",
+    "webpack": "^1.12.13",
+    "webpack-dev-server": "^1.14.1"
   }
 }
