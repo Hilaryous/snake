@@ -43,9 +43,11 @@ describe('Snake', () => {
   });
 
   it('moves based of user input', () => {
-    const snake = new Snake(10,10);
+    const snake = new Snake(10,10).grow().grow();
     const key = Key
-    key._pressed = {39: true}
+    key._pressed = {39: true} //right
+    snake.move(Key)
+    key._pressed = {40: true} //down
     snake.move(Key)
     expect(snake).to.have.deep.property('first.x', 11)
     expect(snake).to.have.deep.property('first.y', 10)
