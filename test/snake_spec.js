@@ -42,16 +42,18 @@ describe('Snake', () => {
     expect(snake).to.have.deep.property('last.y', 10)
   });
 
-  it('moves based of user input', () => {
-    const snake = new Snake(10,10).grow().grow();
+  it.only('moves based of user input', () => {
+    const snake = new Snake(40,10).grow().grow();
     const key = Key
     key._pressed = {39: true} //right
     snake.move(Key)
     key._pressed = {40: true} //down
     snake.move(Key)
-    expect(snake).to.have.deep.property('first.x', 11)
-    expect(snake).to.have.deep.property('first.y', 10)
-    expect(snake).to.have.deep.property('last.x', 1)
+    expect(snake).to.have.deep.property('first.x', 41)
+    expect(snake).to.have.deep.property('first.y', 11)
+    expect(snake).to.have.deep.property('first.next.x', 41)
+    expect(snake).to.have.deep.property('first.next.y', 10)
+    expect(snake).to.have.deep.property('last.x', 21)
     expect(snake).to.have.deep.property('last.y', 10)
   });
 
